@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 	Find the greatest common divisor of two positive integers. The integers can be large, so you need to find a clever solution.
 
@@ -7,9 +9,14 @@ package main
 */
 
 func compute(x, y int) int {
-	panic("Implement me!")
+	if y == 0 {
+		return x
+	} else {
+		return compute(y, x%y)
+	}
 }
 
 func main() {
-
+	fmt.Println(compute(12, 13))
+	fmt.Println(compute(9, 3))
 }
